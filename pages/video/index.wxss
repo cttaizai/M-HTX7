@@ -1,0 +1,16 @@
+/* pages/mian-video/index.wxss */
+.video{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 30rpx;
+}
+
+.item{
+  width: 48%;
+}
+
+
+
+
+

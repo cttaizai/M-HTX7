@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "v-list-item":"../../components/v-list-item/index"
+  }
+}
