@@ -1,6 +1,6 @@
 <!--pages/mian-video/index.wxml-->
 <view class="video">
   <view class="item" wx:for="{{topMVs}}" wx:key="id">
-    <v-list-item item="{{ item }}"></v-list-item>
+    <v-list-item data-item="{{ item }}" item="{{ item }}" bindtap="pushVideoDetail"></v-list-item>
   </view>
 </view>

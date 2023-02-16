@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/video/index",
-    "pages/music/index"
+    "pages/music/index",
+    "pages/videoDetail/index",
+    "pages/search/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -10,18 +12,20 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/music/index",
-      "text": "音乐",
-      "iconPath": "assets/images/tabbar/music_normal.png",
-      "selectedIconPath": "assets/images/tabbar/music_active.png"
-    },
-    {
-      "pagePath": "pages/video/index",
-      "text": "视频",
-      "iconPath": "assets/images/tabbar/video_normal.png",
-      "selectedIconPath": "assets/images/tabbar/video_active.png"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/music/index",
+        "text": "音乐",
+        "iconPath": "assets/images/tabbar/music_normal.png",
+        "selectedIconPath": "assets/images/tabbar/music_active.png"
+      },
+      {
+        "pagePath": "pages/video/index",
+        "text": "视频",
+        "iconPath": "assets/images/tabbar/video_normal.png",
+        "selectedIconPath": "assets/images/tabbar/video_active.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

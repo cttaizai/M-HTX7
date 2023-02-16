@@ -1,0 +1,11 @@
+/* pages/vdetail/index.wxss */
+
+page{
+  padding-top: 225px;
+}
+
+.video-player{
+  width: 100%;
+  position: fixed;
+  top:0
+}

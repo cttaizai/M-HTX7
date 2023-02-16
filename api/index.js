@@ -1,6 +1,6 @@
 class Request{
-  BASE_URL = "http://123.207.32.32:9001"
-
+  BASE_URL = "http://123.207.32.32:9002"
+  // http://123.207.32.32:9002/
   request(url,method,params){
     return new Promise((resolve,reject)=>{
       wx.request({

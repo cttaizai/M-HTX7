@@ -1,1 +1,15 @@
 /**index.wxss**/
+
+.swiper{
+}
+
+.swiper-item{
+  display: flex;
+}
+.swiper-image{
+  width: 100%;
+}
+
+.van-search__content{
+  background: #fff !important;
+} 

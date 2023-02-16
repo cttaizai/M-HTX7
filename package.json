@@ -1,0 +1,23 @@
+{
+  "name": "m-htx7",
+  "version": "1.0.0",
+  "description": "the headphones grow on the ears.",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/htx7/M-HTX7.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/htx7/M-HTX7/issues"
+  },
+  "homepage": "https://github.com/htx7/M-HTX7#readme",
+  "dependencies": {
+    "@vant/weapp": "^1.10.13"
+  }
+}

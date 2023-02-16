@@ -1,4 +1,10 @@
-<!--index.wxml-->
-<view class="container">
-  music
-</view>
+
+<!-- 搜索 -->
+<van-search shape="round" bind:click-input="blankSearch" disabled background="#fafafa"  placeholder="搜索喜欢的歌曲"/>
+
+<swiper class="swiper" indicator-dots autoplay circular
+ style="height: {{swiperHeight}}px;">
+  <swiper-item class="swiper-item"  wx:for="{{banners}}"  wx:key="{{ item.bannerId }}">
+    <image  class="swiper-image" src="{{item.pic}}" mode="widthFix" bindload="swiperImageLoad"></image>
+  </swiper-item>
+</swiper>
