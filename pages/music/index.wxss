@@ -1,6 +1,12 @@
 /**index.wxss**/
-
+page{
+  padding: 0 8px;
+}
 .swiper{
+  border-radius: 8rpx;
+  overflow: hidden;
+  /* 解决部分机型移动端，圆角失效 */
+  transform: translateY(0);
 }
 
 .swiper-item{
@@ -10,6 +16,9 @@
   width: 100%;
 }
 
+.van-search{
+  padding: 10px 5px !important;
+}
 .van-search__content{
-  background: #fff !important;
+  background: #fafafa !important;
 } 

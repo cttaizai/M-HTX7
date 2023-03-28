@@ -1,4 +1,7 @@
 /**app.wxss**/
+page{
+  box-sizing: border-box;
+}
 .container {
   height: 100%;
   display: flex;

@@ -1,0 +1,15 @@
+<!--components/song-tile/index.wxml-->
+<view class="item" >
+  <image src="{{ item.al.picUrl }}" class="cover" />
+  <view class="content">
+    <view class="name">
+       {{ item.name }}
+    </view>
+    <view class="source">
+       {{ item.ar[0].name }}
+    </view>
+  </view>
+  <view class="arrow">
+        <image class="icon" src="/assets/images/icons/arrow-right.png"/>
+  </view>
+</view>

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/htx7/M-HTX7#readme",
   "dependencies": {
-    "@vant/weapp": "^1.10.13"
+    "@vant/weapp": "^1.10.13",
+    "hy-event-store": "^1.2.1"
   }
 }

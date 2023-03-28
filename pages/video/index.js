@@ -91,7 +91,7 @@ Page({
   pushVideoDetail(e){
     let item = e.currentTarget.dataset.item;
     wx.navigateTo({
-      url: '../vdetail/index?id='+item.id,
+      url: '../video_detail/index?id='+item.id,
     })
   },
 

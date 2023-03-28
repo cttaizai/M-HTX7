@@ -1,13 +1,11 @@
-// components/v-list-item/index.js
+// components/song-tile/index.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-      item:{
-        type:Object,
-        value:{}
-      }
+    item:Object,
+    value:{}
   },
 
   /**

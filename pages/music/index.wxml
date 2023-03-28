@@ -4,7 +4,18 @@
 
 <swiper class="swiper" indicator-dots autoplay circular
  style="height: {{swiperHeight}}px;">
-  <swiper-item class="swiper-item"  wx:for="{{banners}}"  wx:key="{{ item.bannerId }}">
+  <swiper-item class="swiper-item"  wx:for="{{banners}}"  wx:key="bannerId">
     <image  class="swiper-image" src="{{item.pic}}" mode="widthFix" bindload="swiperImageLoad"></image>
   </swiper-item>
 </swiper>
+
+
+<view class="recommend-song">
+  <article-header title="推荐歌曲">
+  </article-header>
+
+  <block wx:for="{{ recommedList }}" wx:key="id">
+    <song-tile item="{{ item }}"></song-tile>
+  </block>
+  
+</view>
