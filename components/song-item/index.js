@@ -1,10 +1,14 @@
-// components/song-tile/index.js
+// components/song-item/index.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    item:Object,
+    index:Number,
+    song:{
+      type:Object,
+      value:{}
+    }
   },
 
   /**

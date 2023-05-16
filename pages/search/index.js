@@ -1,66 +1,59 @@
 // pages/search/index.js
+import { getSearchHot, getSearchSuggest } from '../../service/search'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    searchValue:'',
+    hots:[],
+    suggestSongs:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.getPageData();
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
+  getPageData(){
+    getSearchHot().then(res=>{
+      if(res.code === 200){
+        let hots = res.result.hots;
+        this.setData({
+          hots
+        })
+      }
+    })
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
+  changeSearch(event){
+    const value = event.detail;
+    this.setData({
+      searchValue:value
+    })
 
-  },
+    if(!value){ 
+      this.setData({
+        suggestSongs:[]
+      })
+      return;
+     }
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+    getSearchSuggest(value).then(res=>{
+      console.log(res.result.allMatch);
+      if(res.code==200){
+        this.setData({
+          suggestSongs:res.result.allMatch
+        })
+      }
+    })
   }
 })

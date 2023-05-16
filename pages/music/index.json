@@ -1,8 +1,10 @@
 {
   "usingComponents": {
     "van-search": "@vant/weapp/search/index",
-    "article-header":"../../components/article-header/index",
+    "block-header":"/components/block-header/index",
     "van-icon": "@vant/weapp/icon/index",
-    "song-tile":"../../components/song-tile/index"
+    "song-tile":"/components/song-tile/index",
+    "slider-playlist":"/components/slider-playlist",
+    "ranking-item":"/components/ranking-item"
   }
 }

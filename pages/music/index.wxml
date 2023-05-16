@@ -3,19 +3,31 @@
 <van-search shape="round" bind:click-input="blankSearch" disabled background="#fafafa"  placeholder="搜索喜欢的歌曲"/>
 
 <swiper class="swiper" indicator-dots autoplay circular
- style="height: {{swiperHeight}}px;">
+ style="height: {{swiperHeight}}px;" >
   <swiper-item class="swiper-item"  wx:for="{{banners}}"  wx:key="bannerId">
     <image  class="swiper-image" src="{{item.pic}}" mode="widthFix" bindload="swiperImageLoad"></image>
   </swiper-item>
 </swiper>
 
-
 <view class="recommend-song">
-  <article-header title="推荐歌曲">
-  </article-header>
-
-  <block wx:for="{{ recommedList }}" wx:key="id">
+  <block-header title="推荐歌曲">
+  </block-header>
+  <block wx:for="{{ recommemdSongs }}" wx:key="id">
     <song-tile item="{{ item }}"></song-tile>
   </block>
-  
+</view>
+
+<!-- 热门歌单 -->
+<slider-playlist title="热门歌单" playlist="{{hotList}}" wx:if="{{hotList.length}}"></slider-playlist>
+
+<slider-playlist title="推荐歌单" playlist="{{recommedList}}" wx:if="{{recommedList.length}}"></slider-playlist>
+
+<!-- 巅峰榜 -->
+<view class="rankings">
+  <block-header title="榜单" rightShow="{{false}}"></block-header>
+  <view class="ranking-list">
+      <block wx:for="{{rankings}}" wx:key="index">
+        <ranking-item itemData="{{item}}" bindtap="pushMusicPlayDetail" data-ranking-key="{{index}}"></ranking-item>
+      </block>
+    </view>
 </view>

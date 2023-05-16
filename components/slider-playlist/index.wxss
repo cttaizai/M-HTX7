@@ -1,0 +1,19 @@
+/* components/slider-block/index.wxss */
+.menulist{
+  width: 100vw;
+  /* 元素不换行 */
+  white-space: nowrap;
+  position: relative;
+  left: -12rpx;
+}
+
+.menulist .item{
+  margin-left: 12rpx;
+  width: 220rpx;
+  display: inline-block;
+ }
+
+.menulist .item:last-child{
+  margin-right: 12rpx;
+}
+

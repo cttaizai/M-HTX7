@@ -11,3 +11,19 @@ page{
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+
+.van-search{
+  padding: 10px 5px !important;
+}
+.van-search__content{
+  background: #f1d2d4 !important;
+  color: white !important;
+} 
+
+.van-field__placeholder {
+  color: rgba(103, 105, 142) !important; 
+  font-size: small;
+}
+
+

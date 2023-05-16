@@ -1,28 +1,29 @@
 /* components/header-article/index.wxss */
-.header{
+.block-header{
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 88rpx;
 }
 
-.header .title{
+.block-header .title{
   font-size: 36rpx;
   font-weight: 700;
 }
 
 
-.header .right .slot:empty + .default{
+.block-header  .right .slot:empty + .default{
   display: flex;
 }
 
-.header .right .default{
+.block-header .right .default{
   display: none;
   align-items: center;
+  font-size: 32rpx;
 }
 
 
-.header .right .icon{
+.block-header .right .icon{
   width: 50rpx;
   height: 50rpx;
 }

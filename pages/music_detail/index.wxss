@@ -1,0 +1,4 @@
+/* pages/music_detail/index.wxss */
+page{
+  padding: 12px;
+}

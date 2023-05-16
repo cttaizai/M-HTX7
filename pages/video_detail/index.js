@@ -1,5 +1,5 @@
 // pages/vdetail/index.js
-import { getMVURL,getMVDetail,getMVRelated } from '../../api/video';
+import { getMVURL,getMVDetail,getMVRelated } from '../../service/video';
 
 Page({
 

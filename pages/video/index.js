@@ -1,5 +1,5 @@
 // pages/mian-video/index.js
-import { getTopMV } from '../../api/video';
+import { getTopMV } from '../../service/video';
 
 Page({
 

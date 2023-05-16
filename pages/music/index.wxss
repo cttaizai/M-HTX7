@@ -1,6 +1,8 @@
 /**index.wxss**/
 page{
-  padding: 0 8px;
+  padding: 0 12rpx;
+  box-sizing: border-box;
+  background: #fafafa;
 }
 .swiper{
   border-radius: 8rpx;
@@ -15,10 +17,3 @@ page{
 .swiper-image{
   width: 100%;
 }
-
-.van-search{
-  padding: 10px 5px !important;
-}
-.van-search__content{
-  background: #fafafa !important;
-} 

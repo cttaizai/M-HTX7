@@ -1,10 +1,14 @@
-// components/song-tile/index.js
+// components/slider-block/index.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    item:Object,
+    title:String,
+    playlist:{
+      type:Object,
+      value:{}
+    }
   },
 
   /**
@@ -18,6 +22,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    pushMusicPlayDetail(){
+    }
   }
 })

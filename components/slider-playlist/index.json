@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "block-header":"../block-header/index",
+    "slider-block":"../slider-block/index"
+  }
+}

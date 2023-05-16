@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "block-header":"/components/block-header/index",
+    "van-search": "@vant/weapp/search/index"
+  }
 }

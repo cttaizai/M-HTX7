@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "block-header":"/components/block-header/index",
+    "playlist-header":"./components/playlist-header",
+    "song-item":"/components/song-item/index"
+  }
+}

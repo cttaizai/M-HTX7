@@ -1,7 +1,7 @@
 <!--components/article-header/index.wxml-->
-<view class="header">
-  <view class="title">{{title}}</view>
-  <view class="right" wx:if="rightShow">
+<view class="block-header">
+  <view class="title" style="font-widget:{{widget}}">{{title}}</view>
+  <view class="right" wx:if="{{rightShow}}">
     <view class="slot"><slot></slot></view>
     <view class="default">
       <text>{{ rightText }}</text>

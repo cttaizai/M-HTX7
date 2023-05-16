@@ -1,10 +1,10 @@
-// components/song-tile/index.js
+// pages/music_detail/components/playlist-header/index.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    item:Object,
+    playlist:Object
   },
 
   /**
