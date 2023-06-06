@@ -52,8 +52,6 @@ Page({
 
   onLoad(options){
     this.getPageState();
-
-    console.log('l',this.data);
     // 获取共享状态
     this.handleStoreState();
   },
@@ -63,7 +61,6 @@ Page({
     // 请求排名音乐的数据
     rankingStore.dispatch('getRankingAction');
     rankingStore.onState('recommendSongs',(res)=>{
-      console.log(res,'the');
       if(!res.tracks) return;
       const recommendSongs = res.tracks.slice(0,7);
       this.setData({

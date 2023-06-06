@@ -1,6 +1,7 @@
 <view class="slider-list">
   <block-header title="{{title}}"></block-header>
-  <scroll-view class="menulist" scroll-x enable-flex>
+  <!-- enable-flex -->
+  <scroll-view class="menulist" scroll-x >
     <block wx:for="{{playlist}}" wx:key="id">
       <slider-block class="item" item="{{item}}"></slider-block>
     </block>

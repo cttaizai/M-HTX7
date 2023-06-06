@@ -1,0 +1,49 @@
+<!--pages/music_player/music_player.wxml-->
+<view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+
+<image class="bg-image" src="{{playSong.al.picUrl}}" mode="aspectFill"></image>
+<view class="bg-cover"></view>
+
+<top-nav>
+  <view slot="center">
+    <view class="tab">
+      <view class="{{ currentPage === 0 ?'active':''}}">歌曲</view>
+      <view class="divider">|</view>
+      <view class="{{ currentPage === 1 ?'active':''}}">歌词</view>
+    </view>
+  </view>
+</top-nav>
+
+
+<swiper class="slider-tab" style="height: calc(100vh - 44px);" bindchange="changePage">
+  <swiper-item class="music">
+    <view class="cover">
+      <image src="image" src="{{playSong.al.picUrl}}" mode="widthFix"></image>
+    </view>
+    <view class="info">
+      <view class="title">aaa</view>
+      <view class="subtitle">
+        <view class="songer">bbb</view>
+        <view class="alias">专辑bbb</view>
+      </view>
+    </view>
+    <view class="lyric">歌词</view>
+    <view class="progress">
+      <slider class="slider" bindchange="{{12}}"/>
+      <view class="time">
+        <view class="current">00:12</view>
+        <view class="duration">03:12</view>
+      </view>
+    </view>
+
+    <view class="control">
+      <image class="btn play-mode" src="/assets/images/player/play_order.png" />
+      <image class="btn play-prev" src="/assets/images/player/play_prev.png" />
+      <image class="btn player" src="/assets/images/player/play_pause.png" />
+      <image class="btn play-next" src="/assets/images/player/play_next.png" />
+      <image class="btn play-music" src="/assets/images/player/play_music.png" />
+    </view>
+  </swiper-item>
+  <swiper-item>2</swiper-item>
+</swiper>
+ 

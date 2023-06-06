@@ -1,8 +1,15 @@
 /* pages/search/index.wxss */
 page{
   padding: 12rpx;
+  padding-top: 54px;
 }
 
+.search-bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 .block-header {
   height: 70rpx !important;
 }
@@ -42,7 +49,7 @@ page{
 .suggest .title{
   color: #8EC3C6;
   font-size: 33rpx;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 .suggest .item{
@@ -53,6 +60,7 @@ page{
 
 .suggest .icon{
   width: 55rpx;
+  height: 25px;
   margin-left: -12rpx;
 }
 

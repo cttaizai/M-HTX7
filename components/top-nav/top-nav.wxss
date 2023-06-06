@@ -1,0 +1,30 @@
+/* components/top-nav/top-nav.wxss */
+
+.top-nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+  color: white;
+}
+
+.default {
+  display: none;
+}
+
+.slot:empty + .default{
+  display: block;
+}
+
+.left,.right{
+  width: 120rpx;
+  justify-content: center;
+  align-items: center;
+  font-size: 40rpx;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}

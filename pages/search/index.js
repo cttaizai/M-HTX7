@@ -1,5 +1,9 @@
 // pages/search/index.js
-import { getSearchHot, getSearchSuggest } from '../../service/search'
+import { getSearchHot, getSearchSuggest,searchSong } from '../../service/search'
+
+import debounce from '../../utils/debounce';
+
+const debounceGetSearchSuggest = debounce(getSearchSuggest)
 Page({
 
   /**
@@ -8,7 +12,9 @@ Page({
   data: {
     searchValue:'',
     hots:[],
-    suggestSongs:[]
+    suggestSongs:[],
+    suggestSongsNodes:[],
+    resultSongs:[]
   },
 
   /**
@@ -34,6 +40,30 @@ Page({
     })
   },
 
+  // 将关键字映射成两部分nodes
+  mapRichNodes(keyword,value){
+    let nodes = [];
+    // 如果没有匹配上，就显示keyword
+    let n2Value = keyword;
+    if(keyword.startsWith(value)){
+       const n1 = {
+         name:'span',
+         attrs: { style: "color: #F0908C;font-size:14px" },
+         children: [ { type: "text", text:  value } ]
+       }
+      nodes.push(n1)
+      n2Value = keyword.slice(value.length);
+    }
+    const n2 = {
+      name: "span",
+      attrs: { style: "color: #424242;font-size:14px" },
+      children: [ { type: "text", text: n2Value } ]
+    }
+    nodes.push(n2);
+
+    return nodes;
+  },
+  
   changeSearch(event){
     const value = event.detail;
     this.setData({
@@ -42,16 +72,51 @@ Page({
 
     if(!value){ 
       this.setData({
-        suggestSongs:[]
+        suggestSongs:[],
+        resultSongs:[]
       })
+      debounceGetSearchSuggest.cancel();
       return;
      }
 
-    getSearchSuggest(value).then(res=>{
-      console.log(res.result.allMatch);
+     debounceGetSearchSuggest(value).then(res=>{
+      let suggestMatch = res.result.allMatch;
       if(res.code==200){
         this.setData({
-          suggestSongs:res.result.allMatch
+          suggestSongs:suggestMatch
+        })
+
+        const suggestSongsKeywords = suggestMatch.map(item=>item.keyword)
+        const suggestSongsNodes = [];
+        for (const keyword of suggestSongsKeywords) {
+           const nodes = this.mapRichNodes(keyword,value);
+           suggestSongsNodes.push(nodes);
+        }
+        this.setData({
+          suggestSongsNodes
+        })
+      }
+
+     
+    })
+  },
+
+  handleKeywordTap(event){
+    const keyword = event.currentTarget.dataset.keyword;
+
+    this.setData({
+      searchValue:keyword
+    })
+    this.handlerSearchAction();
+  },
+  handlerSearchAction(e){
+    console.log('23');
+    const keywords = this.data.searchValue;
+
+    searchSong(keywords).then(res=>{
+      if(res.code==200){
+        this.setData({
+          resultSongs:res.result.songs
         })
       }
     })

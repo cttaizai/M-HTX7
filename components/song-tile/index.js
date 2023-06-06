@@ -18,6 +18,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    songItemTap(){
+      let id  = this.properties.item.id;
+      wx.navigateTo({
+        url: '/pages/music_player/music_player?id='+id,
+      })
+    }
   }
 })

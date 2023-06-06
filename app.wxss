@@ -17,12 +17,12 @@ page{
   padding: 10px 5px !important;
 }
 .van-search__content{
-  background: #f1d2d4 !important;
+  background: rgba(142, 195, 198,.6) !important;
   color: white !important;
 } 
 
 .van-field__placeholder {
-  color: rgba(103, 105, 142) !important; 
+  color: #666 !important; 
   font-size: small;
 }
 

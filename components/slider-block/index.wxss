@@ -1,5 +1,7 @@
 .block{
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .block .cover{
@@ -20,7 +22,6 @@
   padding: 6rpx 12rpx;
   border-radius: 10rpx;
   background-color: rgba(0, 0, 0,.5);
-
 }
 .block .bottom{
   width: 100%;

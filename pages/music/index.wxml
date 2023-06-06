@@ -1,6 +1,6 @@
 
 <!-- 搜索 -->
-<van-search shape="round" bind:click-input="blankSearch" disabled background="#fafafa"  placeholder="搜索喜欢的歌曲"/>
+<van-search shape="round" bind:click-input="blankSearch" disabled background="#fafafa"  placeholder="搜索喜欢的歌曲" />
 
 <swiper class="swiper" indicator-dots autoplay circular
  style="height: {{swiperHeight}}px;" >
@@ -12,8 +12,8 @@
 <view class="recommend-song">
   <block-header title="推荐歌曲">
   </block-header>
-  <block wx:for="{{ recommemdSongs }}" wx:key="id">
-    <song-tile item="{{ item }}"></song-tile>
+  <block wx:for="{{ recommendSongs }}" wx:key="id">
+    <song-tile item="{{ item }}" click=""></song-tile>
   </block>
 </view>
 

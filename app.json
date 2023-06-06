@@ -4,7 +4,8 @@
     "pages/music/index",
     "pages/video_detail/index",
     "pages/search/index",
-    "pages/music_detail/index"
+    "pages/music_detail/index",
+    "pages/music_player/music_player"
   ],
   "window": {
     "backgroundTextStyle": "light",

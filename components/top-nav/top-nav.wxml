@@ -1,0 +1,24 @@
+<!--components/top-nav/top-nav.wxml-->
+<view class="top-nav">
+  <view class="left">
+    <view class="slot">
+      <slot name="name"></slot>
+    </view>
+    <view class="default">
+        <van-icon class="icon" name="arrow-left" />
+      </view>
+  </view>
+  <view class="center">
+   <view class="slot">
+    <slot name="center"></slot>
+   </view>
+    <view class="default">
+      <view class="title">{{title}}</view>
+    </view>
+  </view>
+  <view class="right">
+   <view class="slot">
+    <slot name="right"></slot>
+   </view>
+  </view>
+</view>

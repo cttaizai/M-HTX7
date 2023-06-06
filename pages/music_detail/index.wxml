@@ -1,8 +1,8 @@
 <!--pages/music_detail/index.wxml-->
-<block-header title="{{playlist.name}}" rightShow="{{false}}" wx:if="{{type=='ranking'}}"/>
+<playlist-header wx:if="{{type=='id'}}" playlist="{{playlist}}"></playlist-header>
 
-<playlist-header wx:elseif="{{type=='id'}}" playlist="{{playlist}}"></playlist-header>
-
+<block-header wx:elif="{{type=='ranking'}}" title="{{playlist.name || ''}}" rightShow="{{false}}" 
+/> 
 <block wx:for="{{playlist.tracks }}" wx:key="index">
   <song-item song="{{item}}" index="{{index+1}}" ></song-item>
 </block>
