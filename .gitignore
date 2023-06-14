@@ -1,0 +1,17 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore minified and compiled files
+/dist/
+/miniprogram_npm/
+/miniprogram_dev/
+
+# Ignore environment variables
+.env
+
+# Ignore log files
+logs/
+
+# Ignore IDE-specific files
+.vscode/
+.idea/

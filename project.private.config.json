@@ -10,43 +10,8 @@
       "list": [
         {
           "name": "",
-          "pathName": "pages/vdetail/index",
-          "query": "id=14580827",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/music/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "m_d",
-          "pathName": "pages/music_detail/index",
-          "query": "type=ranking&key=originlist",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/music_detail/index",
-          "query": "type=id&id=7684119323",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/search/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
           "pathName": "pages/music_player/music_player",
-          "query": "id=2045535978",
+          "query": "id=1860879623",
           "launchMode": "default",
           "scene": null
         }

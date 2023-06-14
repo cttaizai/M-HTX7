@@ -24,8 +24,10 @@ Component({
   methods: {
     handleSongPlay(){
       const id = this.properties.song.id;
+
+      console.log(id);
       wx.navigateTo({
-        url: '../../pages/music_player/music_player?id'+id,
+        url: '../../pages/music_player/music_player?id='+id,
       })
     }
   }

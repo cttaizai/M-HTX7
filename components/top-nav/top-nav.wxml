@@ -5,8 +5,8 @@
       <slot name="name"></slot>
     </view>
     <view class="default">
-        <van-icon class="icon" name="arrow-left" />
-      </view>
+        <van-icon bindtap="backPage" class="icon" name="arrow-left" />
+    </view>
   </view>
   <view class="center">
    <view class="slot">
