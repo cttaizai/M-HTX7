@@ -10,10 +10,5 @@ export const getSongDetail = (ids)=>{
 
 // 获取歌词
 export const getSongLyric = (id)=>{
-  return request.get({
-    url:'/lyric',
-    data:{
-      id
-    }
-  })
+  return request.get('/lyric?',{id})
 } 

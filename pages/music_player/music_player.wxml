@@ -27,7 +27,7 @@
         <view class="alias">{{playSong.ar[0].name}}</view>
       </view>
     </view>
-    <view class="lyric">歌词</view>
+    <view class="lyric">{{ lyric_t }}</view>
     <view class="progress">
       <slider class="slider" block-size="{{12}}"   value="{{playProgress}}" bindchange="sliderChange" bindchanging="sliderChanging" />
       <view class="time">
