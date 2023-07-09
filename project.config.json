@@ -1,5 +1,4 @@
 {
-  "appid": "wx33c335a6cb87fd3a",
   "compileType": "miniprogram",
   "libVersion": "2.25.2",
   "packOptions": {
@@ -19,11 +18,13 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "condition": false
+    "condition": false,
+    "ignoreUploadUnusedFiles": true
   },
   "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  }
+  },
+  "appid": "wx33c335a6cb87fd3a"
 }

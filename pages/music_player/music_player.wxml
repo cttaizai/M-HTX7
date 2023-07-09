@@ -8,24 +8,24 @@
 <top-nav>
   <view slot="center">
     <view class="tab">
-      <view class="{{ currentPage === 0 ?'active':''}}">歌曲</view>
+      <view bindtap="clickPageTab" data-index="0" class="{{ currentPage == 0 ?'active':''}}">歌曲</view>
       <view class="divider">|</view>
-      <view class="{{ currentPage === 1 ?'active':''}}">歌词</view>
+      <view bindtap="clickPageTab"  data-index="1" class="{{ currentPage == 1 ?'active':''}}">歌词</view>
     </view>
   </view>
 </top-nav>
 
 
-<swiper class="slider-tab" style="height: calc(100vh - 44px);" bindchange="changePage">
+<swiper class="slider-tab" style="height: calc(100vh - 44px);" 
+current="{{currentPage}}"
+bindchange="changePage">
   <swiper-item class="music">
     <view class="cover">
       <image src="image" src="{{playSong.al.picUrl}}" mode="widthFix"></image>
     </view>
     <view class="info">
-      <view class="subtitle">
-        <view class="songer">{{playSong.name}}</view>
-        <view class="alias">{{playSong.ar[0].name}}</view>
-      </view>
+      <view class="songer">{{playSong.name}}</view>-
+      <view class="alias">{{playSong.ar[0].name}}</view>
     </view>
     <view class="lyric">{{ lyric_t }}</view>
     <view class="progress">
@@ -37,13 +37,22 @@
     </view>
 
     <view class="control">
-      <image class="btn play-mode" src="/assets/images/player/play_order.png" />
+      <image class="btn play-mode" bindtap="onChangeMode" src="/assets/images/player/play_{{playMode}}.png" />
       <image class="btn play-prev" src="/assets/images/player/play_prev.png" />
-      <image class="btn player" src="/assets/images/player/play_pause.png" />
+      <image class="btn player" src="/assets/images/player/play_{{isPlaying?'pause':'resume'}}.png" bindtap="onPlaySwitch" />
       <image class="btn play-next" src="/assets/images/player/play_next.png" />
       <image class="btn play-music" src="/assets/images/player/play_music.png" />
     </view>
   </swiper-item>
-  <swiper-item>2</swiper-item>
+  <swiper-item>
+    <scroll-view class="lyric-list" 
+      scroll-with-animation
+      scroll-top="{{ lyric_i * 35}}"
+      scroll-y>
+      <block wx:for="{{lyricList}}" wx:key="index" > 
+          <view class="item {{ lyric_i==index?'active':'' }}">{{ item.words }}</view>
+      </block>
+    </scroll-view>
+  </swiper-item>
 </swiper>
  

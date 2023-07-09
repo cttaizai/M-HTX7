@@ -14,9 +14,16 @@
           "query": "id=1860879623",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "play",
+          "pathName": "pages/music_player/music_player",
+          "query": "id=1974443814",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
   },
-  "libVersion": "2.31.0"
+  "libVersion": "2.32.3"
 }

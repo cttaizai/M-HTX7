@@ -3,7 +3,7 @@
 <video src="{{ mvURL }}" autoplay 
 referrer-policy="origin"
 class="video-player"></video>
-<block>
-  <view wx:for="{{ 100 }}" :wx:key="*this">列表数据{{item}}</view>
+<block wx:for="{{ 100 }}" :wx:key="*this">
+  <view>列表数据{{item}}</view>
 </block>
 
