@@ -1,13 +1,17 @@
 /* components/song-tile/index.wxss */
 .item{
   display: flex;
-  padding: 14rpx 0;
+  padding: 2rpx 0;
   align-items: center;
+  background: rgba(118, 130, 182,0.15);
+  border-radius: 12px;
+  margin-bottom: 12rpx;
+  font-size: 30rpx;
 }
 
 .cover {
-  width: 117rpx;
-  height: 117rpx;
+  width: 100rpx;
+  height: 100rpx;
   border-radius: 14rpx;
 }
 

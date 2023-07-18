@@ -1,5 +1,6 @@
 // pages/music_detail/index.js
 import { getPlaylistDetail } from '../../service/song';
+import playStore from '../../store/player';
 import { rankingStore } from '../../store/ranking' 
 Page({
   /**
@@ -10,6 +11,15 @@ Page({
     playlist:[]
   },
 
+  handleSongPlay(e){
+      let { id , index } = e.currentTarget.dataset;
+      wx.navigateTo({  
+        url: '../../pages/music_player/music_player?id='+id,  
+      })
+
+      playStore.setState('playListIndex',index);
+      playStore.setState('playList',this.data.playlist.tracks);
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -18,14 +28,16 @@ Page({
     this.setData({
       type
     })
+    // 从共享数据获取
     if(type==='ranking'){
       const key = options.key;
-      rankingStore.onState(key,(state)=>{
+      rankingStore.onState(key,(playlist)=>{
         this.setData({
-          playlist:state
+          playlist
         })
       })
     }else if(type === 'id'){
+      // 根据id查询歌单
       const id = options.id;
       getPlaylistDetail(id).then(res=>{
         this.setData({

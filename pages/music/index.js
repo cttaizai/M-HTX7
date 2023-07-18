@@ -5,6 +5,7 @@ import { getBanners,getPlaylist } from '../../service/song'
 
 import queryBoundRect from '../../utils/queryBoundRect.js';
 import { debounce } from '../../utils/subtract.js';
+import playStore from '../../store/player';
 let debounceBoundRect = debounce(queryBoundRect);
 
 Page({
@@ -15,10 +16,14 @@ Page({
       // 推荐歌曲
       recommendSongs:[],
 
+      // 当前播放歌曲
+      playSong:{}, 
+      isPlaying:false,
+
       // 热门歌单
       hotList:[],
       // 推荐歌单
-      recommedList:[],
+      recommendList:[],
       // 榜单数据
       rankings:{
         newlist:{},
@@ -27,6 +32,35 @@ Page({
       }
     }
   },
+  openPlayer(){
+    wx.navigateTo({
+      url: `../music_player/music_player?id=${this.data.playSong.id}`,
+    })
+  },
+
+  triggerPlay(){
+    playStore.dispatch("controlPlayback",!this.data.isPlaying);
+  },
+
+  handleRecommendMore(){
+   wx.navigateTo({
+     url: '../music_detail/index?type=ranking&key=recommendSongs',
+   })
+  },
+
+  // 歌曲推荐添加播放歌曲，播放列表
+  startPlaySong(e){
+    let { index ,id } = e.currentTarget.dataset;
+    
+    wx.navigateTo({
+      url: '/pages/music_player/music_player?id='+id,
+    })
+
+    playStore.setState('playList',this.data.recommendSongs);
+    playStore.setState('playListIndex',index)
+  },
+
+  // 到搜索页
   blankSearch(){
       wx.navigateTo({
         url: '../search/index',
@@ -71,6 +105,16 @@ Page({
     rankingStore.onState('newlist',this.handleEffectState('newlist'))
     rankingStore.onState('originlist',this.handleEffectState('originlist'))
     rankingStore.onState('soundlist',this.handleEffectState('soundlist'))
+
+    playStore.onStates(['playSong','isPlaying'],({playSong ,isPlaying})=>{
+      if(playSong){
+        this.setData({ playSong })
+      }
+
+      if(isPlaying!=undefined){
+        this.setData({ isPlaying })
+      }
+    })
   },
   handleEffectState(index){
     return (res)=>{
@@ -106,7 +150,7 @@ Page({
       if(res.code==200){
         // 通过最新的数据对wxml进行渲染，渲染过程是异步的
         this.setData({
-          recommedList:res.playlists
+          recommendList:res.playlists
         })
       }
     })

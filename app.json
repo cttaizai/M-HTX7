@@ -13,6 +13,8 @@
     "navigationBarTitleText": "HTX7",
     "navigationBarTextStyle": "black"
   },
+  "lazyCodeLoading": "requiredComponents",
+  "requireBackgroundModes": ["audio"],
   "tabBar": {
     "color": "#67698D",
     "selectedColor": "#F0908C",

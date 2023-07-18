@@ -4,6 +4,6 @@
 <block-header wx:elif="{{type=='ranking'}}" title="{{playlist.name || ''}}" rightShow="{{false}}" 
 /> 
 <block wx:for="{{playlist.tracks }}" wx:key="index">
-  <song-item song="{{item}}" index="{{index+1}}" ></song-item>
+  <song-item song="{{item}}" index="{{index+1}}" bindtap="handleSongPlay" data-index="{{index}}" data-id="{{item.id}}"></song-item>
 </block>
 

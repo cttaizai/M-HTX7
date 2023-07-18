@@ -1,7 +1,7 @@
 <view class="slider-list">
   <block-header title="{{title}}"></block-header>
   <!-- enable-flex -->
-  <scroll-view class="menulist" scroll-x >
+  <scroll-view class="menulist" scroll-x 	show-scrollbar="{{false}}" enhanced>
     <block wx:for="{{playlist}}" wx:key="id">
       <slider-block class="item" item="{{item}}"></slider-block>
     </block>

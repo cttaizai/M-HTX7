@@ -17,3 +17,69 @@ page{
 .swiper-image{
   width: 100%;
 }
+
+
+.playbar-placeholder{
+  height: 48px;
+}
+.play-bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  box-sizing: border-box;
+
+  height: 48px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: linear-gradient(to right, #4B86F0, #6B3FA0);
+  /* background: #f3c5b9; */
+}
+
+.play-bar .name {
+  color:  white;
+  font-size: 13px;
+  margin-left: 10rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden
+}
+
+.play-bar .left,.play-bar .right{
+  display: flex;
+  align-items: center;
+}
+
+@keyframes avatarRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.play-bar .avatar{
+  width: 48px;
+  border-radius: 50%;
+  height: 48px;
+  position: relative;
+  top: -8px;
+
+}
+
+.avatarRotate {
+  animation: avatarRotate 12s linear infinite;
+}
+
+
+
+
+.play-bar .icon{
+  width: 25px;
+  height: 25px;
+}
+

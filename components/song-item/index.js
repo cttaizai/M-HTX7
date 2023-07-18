@@ -22,13 +22,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    handleSongPlay(){
-      const id = this.properties.song.id;
-
-      console.log(id);
-      wx.navigateTo({
-        url: '../../pages/music_player/music_player?id='+id,
-      })
-    }
+   
   }
 })

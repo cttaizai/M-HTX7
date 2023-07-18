@@ -1,5 +1,5 @@
 <!--components/song-tile/index.wxml-->
-<view class="item" bindtap="songItemTap">
+<view class="item">
   <image src="{{ item.al.picUrl }}" class="cover" />
   <view class="content">
     <view class="name">

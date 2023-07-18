@@ -9,18 +9,21 @@
   </swiper-item>
 </swiper>
 
-<view class="recommend-song">
-  <block-header title="推荐歌曲">
+<!-- wx:if="{{recommendSongs.length}}" -->
+<view class="recommend-song" >
+  <block-header title="推荐歌曲" bind:trailingTap="handleRecommendMore">
   </block-header>
   <block wx:for="{{ recommendSongs }}" wx:key="id">
-    <song-tile item="{{ item }}" click=""></song-tile>
+    <song-tile item="{{ item }}" data-index="{{index}}" data-id="{{item.id}}" bindtap="startPlaySong"></song-tile>
   </block>
 </view>
 
 <!-- 热门歌单 -->
-<slider-playlist title="热门歌单" playlist="{{hotList}}" wx:if="{{hotList.length}}"></slider-playlist>
+<!-- wx:if="{{hotList.length}}" -->
+<slider-playlist title="热门歌单" playlist="{{hotList}}" ></slider-playlist>
 
-<slider-playlist title="推荐歌单" playlist="{{recommedList}}" wx:if="{{recommedList.length}}"></slider-playlist>
+<!-- wx:if="{{recommendList.length}}" -->
+<slider-playlist title="推荐歌单" playlist="{{recommendList}}"></slider-playlist>
 
 <!-- 巅峰榜 -->
 <view class="rankings">
@@ -30,4 +33,16 @@
         <ranking-item itemData="{{item}}" bindtap="pushMusicPlayDetail" data-ranking-key="{{index}}"></ranking-item>
       </block>
     </view>
+</view>
+
+<view class="playbar-placeholder" wx:if="{{ playSong.id }}"></view>
+<view class="play-bar" wx:if="{{ playSong.id }}" catchtap="openPlayer">
+  <view class="left">
+    <image style="animation-play-state:{{isPlaying?'running':'paused'}};" class="avatar avatarRotate" src="{{ playSong.al.picUrl }}" mode="aspectFill"/>
+    <view class="name">{{ playSong.name }}</view>
+  </view>
+  <view class="right">
+    <image class="icon" style="margin-right: 5px;" src="/assets/images/music/{{isPlaying ? 'pause':'play'}}_icon.png" bindtap="triggerPlay"/>
+    <image  class="icon" src="/assets/images/music/playlist_icon.png" mode=""/>
+  </view>
 </view>
