@@ -44,7 +44,7 @@ Page({
 
   handleRecommendMore(){
    wx.navigateTo({
-     url: '../music_detail/index?type=ranking&key=recommendSongs',
+     url: '../../packages/pages/music_detail/index?type=ranking&key=recommendSongs',
    })
   },
 
@@ -63,14 +63,14 @@ Page({
   // 到搜索页
   blankSearch(){
       wx.navigateTo({
-        url: '../search/index',
+        url: '/packages/pages/search/index',
       })
   },
 
   pushMusicPlayDetail(e){
     let key = e.currentTarget.dataset.rankingKey;
     wx.navigateTo({
-      url: `../music_detail/index?type=ranking&key=${key}`,
+      url: `../../packages/pages/music_detail/index?type=ranking&key=${key}`,
     })
   },
 

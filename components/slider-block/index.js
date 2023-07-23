@@ -21,7 +21,7 @@ Component({
     pushMusicPlayDetail(){
       const id = this.properties.item.id
       wx.navigateTo({
-        url: `/pages/music_detail/index?type=id&id=${id}`,
+        url: `/packages/pages/music_detail/index?type=id&id=${id}`,
       })
     }
   }

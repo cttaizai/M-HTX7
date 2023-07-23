@@ -29,10 +29,6 @@ export function getToken(code){
   })
 }
 
-export function checkToken(token){
-  return loginRequest.post('/auth',{},{
-    header:{
-      token:token + '12'
-    }
-  })
+export function checkToken(){
+  return loginRequest.post('/auth',{})
 }

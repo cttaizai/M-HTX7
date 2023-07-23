@@ -1,7 +1,6 @@
-// pages/music_detail/index.js
-import { getPlaylistDetail } from '../../service/song';
-import playStore from '../../store/player';
-import { rankingStore } from '../../store/ranking' 
+import { getPlaylistDetail } from '../../../service/song';
+import playStore from '../../../store/player';
+import { rankingStore } from '../../../store/ranking' 
 Page({
   /**
    * 页面的初始数据
@@ -13,8 +12,9 @@ Page({
 
   handleSongPlay(e){
       let { id , index } = e.currentTarget.dataset;
+
       wx.navigateTo({  
-        url: '../../pages/music_player/music_player?id='+id,  
+        url: '/pages/music_player/music_player?id='+id,  
       })
 
       playStore.setState('playListIndex',index);

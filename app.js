@@ -17,14 +17,14 @@ App({
       }
     });
 
+    this.handleLogin();
+  },
+  async handleLogin(){
     const token = wx.getStorageSync(TOKEN_KEY);
 
-    const checkResult = await checkToken(token);
-
-    console.log(checkResult,'检查结果');
+    const checkResult = await checkToken();
 
     const isSession = await checkSession();
-    console.log(isSession);
 
     if(!token || checkResult.errorCode || !isSession){
       this.startLogin()
@@ -32,7 +32,7 @@ App({
   },
   async startLogin(){
     const code = await getWxCode();
-    const token = await getToken(code);
-    wx.setStorageSync(TOKEN_KEY, token)
+    const tokenResult = await getToken(code);
+    wx.setStorageSync(TOKEN_KEY,tokenResult.token)
   }
 })

@@ -1,0 +1,9 @@
+<!--pages/vdetail/index.wxml-->
+<!-- <text>pages/vdetail/index.wxml</text> -->
+<video src="{{ mvURL }}" autoplay 
+referrer-policy="origin"
+class="video-player"></video>
+<block wx:for="{{ 100 }}" :wx:key="*this">
+  <view>列表数据{{item}}</view>
+</block>
+

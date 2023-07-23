@@ -1,0 +1,4 @@
+<!--pages/profile/index.wxml-->
+<button  bindtap="getUserProfile">获取用户信息</button>
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号码</button>
+

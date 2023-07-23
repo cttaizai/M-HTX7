@@ -2,10 +2,8 @@
   "pages": [
     "pages/video/index",
     "pages/music/index",
-    "pages/video_detail/index",
-    "pages/search/index",
-    "pages/music_detail/index",
-    "pages/music_player/music_player"
+    "pages/music_player/music_player",
+    "pages/profile/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,7 +12,26 @@
     "navigationBarTextStyle": "black"
   },
   "lazyCodeLoading": "requiredComponents",
-  "requireBackgroundModes": ["audio"],
+  "requireBackgroundModes": [
+    "audio"
+  ],
+  "subPackages": [
+    {
+      "root": "packages",
+      "name":"detail",
+      "pages": [
+        "pages/music_detail/index",
+        "pages/video_detail/index",
+        "pages/search/index"
+      ]
+    }
+  ],
+  "preloadRule":{
+    "pages/music/index":{
+      "network": "all",
+      "packages": ["detail"]
+    }
+  },
   "tabBar": {
     "color": "#67698D",
     "selectedColor": "#F0908C",
@@ -31,6 +48,12 @@
         "text": "视频",
         "iconPath": "assets/images/tabbar/outline_live_tv_black_24dp.png",
         "selectedIconPath": "assets/images/tabbar/outline_live_tv_black_24dp.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "assets/images/tabbar/person.png",
+        "selectedIconPath": "assets/images/tabbar/person.png"
       }
     ]
   },
