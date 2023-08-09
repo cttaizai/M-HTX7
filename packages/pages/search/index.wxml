@@ -1,7 +1,7 @@
 <!--pages/search/index.wxml-->
 
 <van-search class="search-bar" show-action="{{searchValue}}" shape="round" background="#fafafa" value="{{ searchValue }}"
-bind:search="handlerSearchAction"
+bind:search="handleSearchAction"
 bind:change="changeSearch" placeholder="搜索喜欢的歌曲"/>
 
 <view class="hots" wx:if="{{!searchValue && !suggestSongs.length}}">
@@ -34,7 +34,9 @@ bind:change="changeSearch" placeholder="搜索喜欢的歌曲"/>
 <view class="suggest" wx:elif="{{resultSongs.length}}">
   <view class="list">
     <block wx:for="{{resultSongs }}" wx:key="id">
-      <song-item song="{{ item }}" index="{{ index + 1 }}"></song-item>
+      <song-item song="{{ item }}" index="{{ index + 1 }}" 
+      data-index="{{index}}" data-id="{{item.id}}"
+      bindtap="handleSongPlay"></song-item>
     </block>
   </view>
 </view>

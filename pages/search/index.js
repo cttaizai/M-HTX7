@@ -107,9 +107,9 @@ Page({
     this.setData({
       searchValue:keyword
     })
-    this.handlerSearchAction();
+    this.handleSearchAction();
   },
-  handlerSearchAction(e){
+  handleSearchAction(e){
     const keywords = this.data.searchValue;
 
     searchSong(keywords).then(res=>{

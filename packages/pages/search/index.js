@@ -1,6 +1,8 @@
 // pages/search/index.js
 import { getSearchHot, getSearchSuggest,searchSong } from '../../../service/search'
 
+import playStore from '../../../store/player';
+
 import debounce from '../../../utils/debounce';
 
 const debounceGetSearchSuggest = debounce(getSearchSuggest)
@@ -38,6 +40,17 @@ Page({
         })
       }
     })
+  },
+
+  handleSongPlay(e){
+    let { id , index } = e.currentTarget.dataset;
+
+    wx.navigateTo({  
+      url: '/pages/music_player/music_player?id='+id,  
+    })
+
+    playStore.setState('playListIndex',index);
+    playStore.setState('playList',this.data.resultSongs);
   },
 
   // 将关键字映射成两部分nodes
@@ -80,7 +93,7 @@ Page({
      }
 
      debounceGetSearchSuggest(value).then(res=>{
-      let suggestMatch = res.result.allMatch;
+      let suggestMatch = res.result.allMatch || [];
       if(res.code==200){
         this.setData({
           suggestSongs:suggestMatch
@@ -96,8 +109,6 @@ Page({
           suggestSongsNodes
         })
       }
-
-     
     })
   },
 
@@ -107,9 +118,9 @@ Page({
     this.setData({
       searchValue:keyword
     })
-    this.handlerSearchAction();
+    this.handleSearchAction();
   },
-  handlerSearchAction(e){
+  handleSearchAction(e){
     const keywords = this.data.searchValue;
 
     searchSong(keywords).then(res=>{

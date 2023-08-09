@@ -26,21 +26,21 @@ Page({
     lyric_i: 0, // 当前歌词索引
 
     isPlaying: false, // 当前播放状态
-    playModeId:0, // 播放模式对应id
-    playMode:playTypes[0], // 播放模式
+    playModeId: 0, // 播放模式对应id
+    playMode: playTypes[0], // 播放模式
     playProgress: 0, // 播放进度
     handChange: false, // 是否手动改变
     scrollTop: 0, // 当前歌词滚动位置
   },
-  backPage(){
+  backPage() {
     wx.navigateBack();
   },
 
-  handlePrevSong(){
-    playStore.dispatch('changeSongAction','prev')
+  handlePrevSong() {
+    playStore.dispatch('changeSongAction', 'prev')
   },
-  handleNextSong(){
-    playStore.dispatch('changeSongAction','next')
+  handleNextSong() {
+    playStore.dispatch('changeSongAction', 'next')
   },
   /**
    * 生命周期函数--监听页面加载
@@ -55,14 +55,14 @@ Page({
     this.onStoreState();
   },
   // 切换播放状态
-  onPlaySwitch(){
-    playStore.dispatch("controlPlayback",!this.data.isPlaying)
+  onPlaySwitch() {
+    playStore.dispatch("controlPlayback", !this.data.isPlaying)
   },
-  
+
   // 切换播放模式
   onChangeMode() {
     let index = ++this.data.playModeId % playTypes.length
-    playStore.setState("playModeId",index)
+    playStore.setState("playModeId", index)
   },
   onStoreState() {
     playStore.onStates(['playSong', 'durationTime', 'currentTime'], (
@@ -81,8 +81,7 @@ Page({
       if (currentTime != undefined) {
         // console.log('手动修改');
         // this.updateProgress(currentTime)
-
-        if(!this.data.handChange){
+        if (!this.data.handChange) {
           let playProgress = currentTime / this.data.durationTime * 100;
           this.setData({
             currentTime,
@@ -95,8 +94,10 @@ Page({
       isPlaying, playModeId }) => {
 
       if (playModeId !== undefined) {
-        this.setData({ playModeId,
-        playMode:playTypes[playModeId]  })
+        this.setData({
+          playModeId,
+          playMode: playTypes[playModeId]
+        })
       }
       if (isPlaying !== undefined) {
         this.setData({ isPlaying })
@@ -123,15 +124,15 @@ Page({
     })
   },
   // 不使用
-  updateProgress:throttle(function (currentTime) {
-    if(!this.data.handChange){
+  updateProgress: throttle(function (currentTime) {
+    if (!this.data.handChange) {
       let playProgress = currentTime / this.data.durationTime * 100;
       this.setData({
         currentTime,
         playProgress
       })
     }
-  },500,{ leading: false, trailing: false }),
+  }, 500, { leading: false, trailing: false }),
   // songPlayHandler() {
   //   audioContext.onTimeUpdate(() => {
   //     let currentTime = audioContext.currentTime * 1000;
@@ -158,7 +159,7 @@ Page({
     // audioContext.play();
 
     this.setData({
-      currentTime:targetTime,
+      currentTime: targetTime,
       handChange: false
     })
 

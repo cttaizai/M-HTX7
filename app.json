@@ -12,7 +12,7 @@
     "navigationBarTextStyle": "black"
   },
   "lazyCodeLoading": "requiredComponents",
-  "requireBackgroundModes": [
+  "requiredBackgroundModes": [
     "audio"
   ],
   "subPackages": [
